@@ -16,32 +16,62 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var wearingSwitch: UISwitch!
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        numberOfDaysLeft--;
-    }
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        numberOfDaysLeft--;
+//    }
 
+    @IBAction func wearingTodayChanged(sender: UISwitch) {
+        switchLabel.font = UIFont(name: "HelveticaNeue" + (sender.on ? "-Medium":"-Light"), size: 17);
+        wearingToday = sender.on
+    }
+    
+    var wearingToday: Bool = false {
+        didSet {
+            if wearingToday != oldValue {
+                if wearingToday {
+                    numberOfDaysLeft--;
+                }
+                else {
+                    numberOfDaysLeft++;
+                }
+            }
+        }
+    }
+    
     var darkMode: Bool = false {
         didSet {
             
             // Only change the colors if the value changed
-            
             if darkMode != oldValue {
+                
+                let foregroundColor = darkMode ? UIColor.whiteColor() : blueColor
+                
                 // Set label colors
-                for label in [numberLabel, descriptionLabel] {
-                    label.textColor = darkMode ? UIColor.whiteColor() : blueColor
+                for label in [numberLabel, descriptionLabel, switchLabel] {
+                    label.textColor = foregroundColor
                 }
+                
+                // Set button colors
+                infoButton.tintColor = foregroundColor
+                
+                // Set switch colors
+                wearingSwitch.onTintColor = foregroundColor
                 
                 // Set view background color
                 view.backgroundColor = darkMode ? UIColor.blackColor() : UIColor.whiteColor()
 
+                descriptionLabel.text = "replace now"
             }
         }
     }
     
     var numberOfDaysLeft: Int = defaultContactLifetime {
         didSet {
-            darkMode = numberOfDaysLeft == 0
+            darkMode = numberOfDaysLeft <= 0
             numberLabel.text = "\(numberOfDaysLeft)"
         }
     }

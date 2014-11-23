@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */; };
-		4DB523111A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5230F1A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodeld */; };
 		4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB523121A2156ED0046B2F6 /* ViewController.swift */; };
 		4DB523161A2156ED0046B2F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB523141A2156ED0046B2F6 /* Main.storyboard */; };
 		4DB523181A2156ED0046B2F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB523171A2156ED0046B2F6 /* Images.xcassets */; };
@@ -30,7 +29,6 @@
 		4DB523081A2156ED0046B2F6 /* Contact Lens Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Lens Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB5230C1A2156ED0046B2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DB523101A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact_Lens_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		4DB523121A2156ED0046B2F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DB523151A2156ED0046B2F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DB523171A2156ED0046B2F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				4DB523141A2156ED0046B2F6 /* Main.storyboard */,
 				4DB523171A2156ED0046B2F6 /* Images.xcassets */,
 				4DB523191A2156ED0046B2F6 /* LaunchScreen.xib */,
-				4DB5230F1A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodeld */,
 				4DB5230B1A2156ED0046B2F6 /* Supporting Files */,
 			);
 			path = "Contact Lens Tracker";
@@ -217,7 +214,6 @@
 			files = (
 				4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */,
 				4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */,
-				4DB523111A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,19 +415,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4DB5230F1A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4DB523101A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodel */,
-			);
-			currentVersion = 4DB523101A2156ED0046B2F6 /* Contact_Lens_Tracker.xcdatamodel */;
-			path = Contact_Lens_Tracker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4DB523001A2156ED0046B2F6 /* Project object */;
 }
