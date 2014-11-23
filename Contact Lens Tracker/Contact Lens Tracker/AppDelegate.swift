@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        if application.respondsToSelector("registerUserNotificationSettings"){
+        if application.respondsToSelector("registerUserNotificationSettings:"){
             
             let yesAction = UIMutableUserNotificationAction()
             yesAction.identifier = "com.JadenGeller.notifcationAction.yes"
@@ -34,8 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             notifcationCategory.identifier = "com.JadenGeller.notifcationCategory.queryLensUsage"
             notifcationCategory.setActions([yesAction, noAction], forContext: UIUserNotificationActionContext.Default)
             
-            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [])))
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notifcationCategory])))
         }
+
         return true
     }
 
