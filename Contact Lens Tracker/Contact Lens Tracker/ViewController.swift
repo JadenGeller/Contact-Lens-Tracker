@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var switchLabel: UILabel!
     @IBOutlet weak var wearingSwitch: UISwitch!
     
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        numberOfDaysLeft--;
-//    }
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        numberOfDaysLeft--;
+    }
 
     @IBAction func wearingTodayChanged(sender: UISwitch) {
         switchLabel.font = UIFont(name: "HelveticaNeue" + (sender.on ? "-Medium":"-Light"), size: 17);
@@ -63,8 +63,6 @@ class ViewController: UIViewController {
                 
                 // Set view background color
                 view.backgroundColor = darkMode ? UIColor.blackColor() : UIColor.whiteColor()
-
-                descriptionLabel.text = "replace now"
             }
         }
     }
@@ -73,6 +71,16 @@ class ViewController: UIViewController {
         didSet {
             darkMode = numberOfDaysLeft <= 0
             numberLabel.text = "\(numberOfDaysLeft)"
+            
+            // Update description label
+            switch numberOfDaysLeft {
+            case let x where x < 1:
+                descriptionLabel.text = "more days"
+            case 1:
+                descriptionLabel.text = "more day"
+            default:
+                descriptionLabel.text = "replace now"
+            }
         }
     }
 
