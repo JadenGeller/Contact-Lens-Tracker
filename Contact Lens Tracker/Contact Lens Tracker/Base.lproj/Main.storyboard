@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="brg-3x-Mg9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--New User View Controller-->
+        <scene sceneID="pjh-zT-QMQ">
+            <objects>
+                <viewController id="brg-3x-Mg9" customClass="NewUserViewController" customModule="Contact_Lens_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lve-iE-tFT"/>
+                        <viewControllerLayoutGuide type="bottom" id="mEJ-F2-uEd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w64-hL-Oc0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RS-18-j3e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-bd-4rG">
+                                        <rect key="frame" x="0.0" y="143" width="605" height="265"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="274" id="7Mk-As-pLd"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.68767121740000003" blue="0.81642597849999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="200"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="How many days do your contacts last?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7si-eW-HaF">
+                                        <rect key="frame" x="64" y="36" width="473" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8RS-18-j3e" firstAttribute="leading" secondItem="w64-hL-Oc0" secondAttribute="leading" id="aOs-F3-9bD"/>
+                            <constraint firstItem="8RS-18-j3e" firstAttribute="top" secondItem="w64-hL-Oc0" secondAttribute="top" id="eyf-O9-aFy"/>
+                            <constraint firstAttribute="trailing" secondItem="8RS-18-j3e" secondAttribute="trailing" id="pVl-V1-ijM"/>
+                            <constraint firstItem="mEJ-F2-uEd" firstAttribute="top" secondItem="8RS-18-j3e" secondAttribute="bottom" id="s41-ZV-MHx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="s41-ZV-MHx" id="48o-zs-B6f"/>
+                        <outlet property="lifetimeField" destination="MWV-bd-4rG" id="742-ix-d3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFQ-lY-SI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="-288"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -147,7 +198,7 @@
         <scene sceneID="SAz-gh-Thg">
             <objects>
                 <tableViewController id="gzr-T2-vvV" customClass="SettingsViewController" customModule="Contact_Lens_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y4Q-Ik-dzd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y4Q-Ik-dzd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

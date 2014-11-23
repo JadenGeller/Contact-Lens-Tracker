@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D36A6491A21750F008162F7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36A6481A21750F008162F7 /* SettingsViewController.swift */; };
+		4D36A64B1A2182A6008162F7 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36A64A1A2182A6008162F7 /* NewUserViewController.swift */; };
 		4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */; };
 		4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB523121A2156ED0046B2F6 /* ViewController.swift */; };
 		4DB523161A2156ED0046B2F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB523141A2156ED0046B2F6 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4D36A6481A21750F008162F7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4D36A64A1A2182A6008162F7 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		4DB523081A2156ED0046B2F6 /* Contact Lens Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Lens Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB5230C1A2156ED0046B2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				4DB523121A2156ED0046B2F6 /* ViewController.swift */,
 				4D36A6481A21750F008162F7 /* SettingsViewController.swift */,
 				4DB523141A2156ED0046B2F6 /* Main.storyboard */,
+				4D36A64A1A2182A6008162F7 /* NewUserViewController.swift */,
 				4DB523171A2156ED0046B2F6 /* Images.xcassets */,
 				4DB523191A2156ED0046B2F6 /* LaunchScreen.xib */,
 				4DB5230B1A2156ED0046B2F6 /* Supporting Files */,
@@ -217,6 +220,7 @@
 			files = (
 				4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */,
 				4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */,
+				4D36A64B1A2182A6008162F7 /* NewUserViewController.swift in Sources */,
 				4D36A6491A21750F008162F7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

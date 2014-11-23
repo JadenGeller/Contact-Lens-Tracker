@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var switchLabel: UILabel!
     @IBOutlet weak var wearingSwitch: UISwitch!
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        numberOfDaysLeft--;
-    }
+
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        numberOfDaysLeft--;
+//    }
 
     @IBAction func wearingTodayChanged(sender: UISwitch) {
         switchLabel.font = UIFont(name: "HelveticaNeue" + (sender.on ? "-Medium":"-Light"), size: 17);
