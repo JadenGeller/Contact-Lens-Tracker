@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D36A6491A21750F008162F7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D36A6481A21750F008162F7 /* SettingsViewController.swift */; };
 		4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */; };
 		4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB523121A2156ED0046B2F6 /* ViewController.swift */; };
 		4DB523161A2156ED0046B2F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB523141A2156ED0046B2F6 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D36A6481A21750F008162F7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4DB523081A2156ED0046B2F6 /* Contact Lens Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact Lens Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB5230C1A2156ED0046B2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				4DB5230D1A2156ED0046B2F6 /* AppDelegate.swift */,
 				4DB523121A2156ED0046B2F6 /* ViewController.swift */,
+				4D36A6481A21750F008162F7 /* SettingsViewController.swift */,
 				4DB523141A2156ED0046B2F6 /* Main.storyboard */,
 				4DB523171A2156ED0046B2F6 /* Images.xcassets */,
 				4DB523191A2156ED0046B2F6 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				4DB523131A2156ED0046B2F6 /* ViewController.swift in Sources */,
 				4DB5230E1A2156ED0046B2F6 /* AppDelegate.swift in Sources */,
+				4D36A6491A21750F008162F7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +409,7 @@
 				4DB5232C1A2156ED0046B2F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DB5232D1A2156ED0046B2F6 /* Build configuration list for PBXNativeTarget "Contact Lens TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				4DB5232F1A2156ED0046B2F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

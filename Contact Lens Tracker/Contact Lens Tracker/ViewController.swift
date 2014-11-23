@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             
             // Update description label
             switch numberOfDaysLeft {
-            case let x where x < 1:
+            case let x where x > 1:
                 descriptionLabel.text = "more days"
             case 1:
                 descriptionLabel.text = "more day"
