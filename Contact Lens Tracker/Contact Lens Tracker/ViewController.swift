@@ -8,18 +8,42 @@
 
 import UIKit
 
+let darkModeLabelTag = 100
+let blueColor = UIColor(red: 0, green: 175.0/255.0, blue: 208.0/255.0, alpha: 1.0)
+let defaultContactLifetime = 20
+
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        numberOfDaysLeft--;
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var darkMode: Bool = false {
+        didSet {
+            
+            // Only change the colors if the value changed
+            
+            if darkMode != oldValue {
+                // Set label colors
+                for label in [numberLabel, descriptionLabel] {
+                    label.textColor = darkMode ? UIColor.whiteColor() : blueColor
+                }
+                
+                // Set view background color
+                view.backgroundColor = darkMode ? UIColor.blackColor() : UIColor.whiteColor()
 
+            }
+        }
+    }
+    
+    var numberOfDaysLeft: Int = defaultContactLifetime {
+        didSet {
+            darkMode = numberOfDaysLeft == 0
+            numberLabel.text = "\(numberOfDaysLeft)"
+        }
+    }
 
 }
-
