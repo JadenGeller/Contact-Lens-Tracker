@@ -199,7 +199,6 @@
                                                     <rect key="frame" x="498" y="7" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="newLifetimeChanged:" destination="gzr-T2-vvV" eventType="valueChanged" id="bJy-Zo-l7R"/>
-                                                        <action selector="remainingChanged:" destination="gzr-T2-vvV" eventType="valueChanged" id="bIM-Vu-OvQ"/>
                                                     </connections>
                                                 </stepper>
                                             </subviews>
@@ -230,6 +229,7 @@
                     <connections>
                         <outlet property="newLifetimeLabel" destination="EVn-Xq-8QY" id="cdG-Wl-T3l"/>
                         <outlet property="remainingLabel" destination="C9R-AJ-jVO" id="cFZ-9E-IDK"/>
+                        <outlet property="remainingStepper" destination="558-9k-NNC" id="WYQ-3u-GtK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5z-Bl-u15" userLabel="First Responder" sceneMemberID="firstResponder"/>
