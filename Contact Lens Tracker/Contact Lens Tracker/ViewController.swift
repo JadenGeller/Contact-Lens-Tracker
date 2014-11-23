@@ -19,6 +19,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var switchLabel: UILabel!
     @IBOutlet weak var wearingSwitch: UISwitch!
+    
+    override func viewDidLoad() {
+        // TODO: Only do first time
+        let recurringNotification = UILocalNotification()
+        recurringNotification.fireDate = NSDate(timeIntervalSinceNow: 2)
+        recurringNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay
+        recurringNotification.alertBody = "Are you wearing contacts today?"
+        recurringNotification.category = "com.JadenGeller.notifcationCategory.queryLensUsage"
+        UIApplication.sharedApplication().scheduleLocalNotification(recurringNotification)
+    }
 
 //    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 //        numberOfDaysLeft--;

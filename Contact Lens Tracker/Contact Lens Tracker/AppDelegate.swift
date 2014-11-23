@@ -13,36 +13,75 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let queryIdentifier = "com.JadenGeller.notifcationCategory.queryLensUsage"
+    let reminderIdentifier = "com.JadenGeller.notifcationCategory.remindLensExpired"
+    let yesIdentifier = "com.JadenGeller.notifcationAction.yes"
+    let noIdentifier = "com.JadenGeller.notifcationAction.no"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         if application.respondsToSelector("registerUserNotificationSettings:"){
             
             let yesAction = UIMutableUserNotificationAction()
-            yesAction.identifier = "com.JadenGeller.notifcationAction.yes"
+            yesAction.identifier = yesIdentifier
             yesAction.title = "Yes"
             yesAction.activationMode = UIUserNotificationActivationMode.Background
             
             let noAction = UIMutableUserNotificationAction()
-            noAction.identifier = "com.JadenGeller.notifcationAction.no"
+            noAction.identifier = noIdentifier
             noAction.title = "No"
             noAction.activationMode = UIUserNotificationActivationMode.Background
 
             
-            let notifcationCategory = UIMutableUserNotificationCategory()
-            notifcationCategory.identifier = "com.JadenGeller.notifcationCategory.queryLensUsage"
-            notifcationCategory.setActions([yesAction, noAction], forContext: UIUserNotificationActionContext.Default)
+            let queryCategory = UIMutableUserNotificationCategory()
+            queryCategory.identifier = queryIdentifier
+            queryCategory.setActions([yesAction, noAction], forContext: UIUserNotificationActionContext.Default)
             
-            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notifcationCategory])))
+            let reminderCategory = UIMutableUserNotificationCategory()
+            reminderCategory.identifier = reminderIdentifier
+
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [queryCategory, reminderCategory])))
         }
 
         return true
+    }
+    
+    let daysRemainingKey = "com.JadenGeller.userDefaults.daysRemaining"
+    var daysRemaining: Int {
+        set{
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: daysRemainingKey)
+            if newValue <= 0 {
+                
+                let recurringNotification = UILocalNotification()
+                recurringNotification.fireDate = NSDate()
+                recurringNotification.alertBody = "Your contacts have expired! Throw them out tonight."
+                recurringNotification.category = reminderIdentifier
+                UIApplication.sharedApplication().scheduleLocalNotification(recurringNotification)
+            }
+        }
+        get{
+            // How will you handle nil values
+            return NSUserDefaults.standardUserDefaults().integerForKey(daysRemainingKey)
+        }
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        if identifier == yesIdentifier {
+            // Actually need to keep track of what day was the last one we wore them in the plist and mark off 
+            // Also want to not remind if the person manually changes it in the app
+            
+            //test
+            daysRemaining = 0
+        }
+        else if identifier == noIdentifier {
+            
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
